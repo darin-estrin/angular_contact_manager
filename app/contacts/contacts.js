@@ -25,7 +25,7 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
   var ref = firebase.database().ref('/contacts');
 
   $scope.contacts = $firebaseArray(ref);
-    //console.log($scope.contacts);
+    //
 
   $scope.showAddForm = function () {
     $scope.addFormShow = true;
@@ -53,7 +53,7 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
   }
 
   $scope.addFormSubmit = function(){
-		console.log('Adding Contact...');
+		
 
 		// Assign Values
 		if($scope.name){ var name = $scope.name } else { var name = null; }
@@ -100,7 +100,7 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 	}
 
   $scope.editFormSubmit = function () {
-    console.log('updating contact');
+    
 
     var id = $scope.id;
 
@@ -127,7 +127,7 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
   }
 
   $scope.showContact = function (contact) {
-    console.log('getting contact');
+    
 
     $scope.name = contact.name;
     $scope.company = contact.company;
@@ -144,7 +144,7 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
   }
 
   $scope.removeContact = function(contact){
-    console.log('Removing Contact');
+    
 
     $scope.contacts.$remove(contact);
 
@@ -152,7 +152,7 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
   }
 
   function clearFields() {
-    console.log('clearing fields');
+    
 
     $scope.name = '';
     $scope.email = '';
