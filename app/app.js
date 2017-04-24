@@ -1,12 +1,9 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('templateStore', [
+angular.module('myContacts', [
   'ngRoute',
-  'templateStore.view1',
-  'templateStore.view2',
-  'templateStore.templates'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/templates'});
+  $routeProvider.otherwise({redirectTo: '/contacts'});
 }]);
