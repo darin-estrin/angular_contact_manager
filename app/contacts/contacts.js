@@ -87,17 +87,16 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 					zipcode: zipcode
 				}
 			]
-		}).then(function(){
-
-			// Clear Form
-			clearFields();
-
-			// Hide Form
-			$scope.addFormShow = false;
-
-			// Send Message
-			$scope.msg = "Contact Added";
 		});
+
+    // Clear Form
+    clearFields();
+
+    // Hide Form
+    $scope.addFormShow = false;
+
+    // Send Message
+    $scope.msg = "Contact Added";
 	}
 
   $scope.editFormSubmit = function () {
@@ -105,9 +104,7 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 
     var id = $scope.id;
 
-    var record = $scope
-      .contacts
-      .$getRecord(id);
+    var record = $scope.contacts.$getRecord(id);
 
     record.name = $scope.name;
     record.email = $scope.email;
@@ -120,9 +117,7 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
     record.address[0].state = $scope.state;
     record.address[0].zipcode = $scope.zipcode;
     
-    $scope.contacts.$save(record).then(function(ref){
-      console.log(ref.key)
-    });
+    $scope.contacts.$save(record);
 
     clearFields();
 
