@@ -47,9 +47,17 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
     $scope.zipcode = contact.address[0].zipcode;
   }
 
-  $scope.hide = function () {
+  $scope.hideAddForm = function() {
     $scope.addFormShow = false;
+    
+  }
+
+  $scope.hideContact = function(){
     $scope.contactShow = false;
+  }
+
+  $scope.hideEditForm = function() {
+    $scope.editFormShow = false;
   }
 
   $scope.addFormSubmit = function(){
