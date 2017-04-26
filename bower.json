@@ -16,6 +16,6 @@
     "jquery": "3.2.1",
     "fastclick": "1.0.6",
     "jquery-placeholder": "2.0.9",
-    "foundation": "1.2.32"
+    "foundation": "5.5.3"
   }
 }
